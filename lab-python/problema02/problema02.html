@@ -14293,12 +14293,12 @@ T_5 = \frac{1}{4}(T_4 + T_2 + T_6 + 20) \\
 T_6 = \frac{1}{4}(T_5 + T_3 + 40 + 20)
 $$<p>Logo,</p>
 $$ \begin{cases}
-    4T_1 - T_2 + 0T_3 - T_4 +0T_5 + 0T_6 &amp;= 30 \\
-    - T_1 + 4T_2 - T_3 + 0T_4 - T_5 + 0T_6 &amp;= 20 \\
-    0T_1 - T_2 + 4T_3 + 0T_4 + 0T_5 - T_6 &amp;= 60  \\
-    - T_1 + 0T_2 + 0T_3 + 4T_4 -T_5 + 0T_6 &amp;= 30 \\
-    0T_1 - T_2 + 0T_3 -T_4 + 4T_5 -T_6 &amp;= 20 \\
-    0T_1 + 0T_2 - T_3 + 0T_4 -T_5 + 4T_6 &amp;= 60
+    4T_1 &amp;-&amp;  T_2 &amp;+&amp; 0T_3 &amp;-&amp;  T_4 &amp;+&amp; 0T_5 &amp;+&amp; 0T_6 &amp;=&amp; 30 \\
+    -T_1 &amp;+&amp; 4T_2 &amp;-&amp; T_3  &amp;+&amp; 0T_4 &amp;-&amp; T_5  &amp;+&amp; 0T_6 &amp;=&amp; 20 \\
+    0T_1 &amp;-&amp;  T_2 &amp;+&amp; 4T_3 &amp;+&amp; 0T_4 &amp;+&amp; 0T_5 &amp;-&amp;  T_6 &amp;=&amp; 60  \\
+    -T_1 &amp;+&amp; 0T_2 &amp;+&amp; 0T_3 &amp;+&amp; 4T_4 &amp;-&amp; T_5  &amp;+&amp; 0T_6 &amp;=&amp; 30 \\
+    0T_1 &amp;-&amp;  T_2 &amp;+&amp; 0T_3 &amp;-&amp;  T_4 &amp;+&amp; 4T_5 &amp;-&amp;  T_6 &amp;=&amp; 20 \\
+    0T_1 &amp;+&amp; 0T_2 &amp;-&amp; T_3  &amp;+&amp; 0T_4 &amp;-&amp; T_5  &amp;+&amp; 4T_6 &amp;=&amp; 60
 \end{cases} $$<p>Que resulta na matriz de coeficientes:</p>
 $$
 \begin{bmatrix}
@@ -14330,7 +14330,7 @@ $$ Ax = b $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[279]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[212]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -14344,7 +14344,7 @@ $$ Ax = b $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[314]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[213]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">],</span> 
@@ -14364,7 +14364,7 @@ $$ Ax = b $$
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[285]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[214]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -14394,6 +14394,13 @@ $$ Ax = b $$
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Dimensões da matriz: (6, 6)
+Matrix expandida:
+[[ 4. -1.  0. -1.  0.  0. 30.]
+ [-1.  4. -1.  0. -1.  0. 20.]
+ [ 0. -1.  4.  0.  0. -1. 60.]
+ [-1.  0.  0.  4. -1.  0. 30.]
+ [ 0. -1.  0. -1.  4. -1. 20.]
+ [ 0.  0. -1.  0. -1.  4. 60.]]
 </pre>
 </div>
 </div>
@@ -14420,7 +14427,7 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[294]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[215]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">matriz_triangular_superior</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
@@ -14455,8 +14462,6 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
             <span class="c1"># deve ser 0 na posição aij</span>
             <span class="n">A_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">+</span><span class="n">A_i</span>
             
-            <span class="c1"># Efetuamos a mesma operação na matriz identidade, para</span>
-            <span class="c1"># registrar a operação</span>
     <span class="k">return</span> <span class="n">A_new</span>
 
 
@@ -14498,11 +14503,11 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[331]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[216]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Aqui podemos verificar o resultado</span>
-<span class="c1"># Sugestão de desafio: generalizar essa função para matrizes arbitrárias</span>
+<span class="c1"># É possivel generalizar essa função para matrizes arbitrárias</span>
 <span class="k">def</span> <span class="nf">resolver_sistema</span><span class="p">(</span><span class="n">ms</span><span class="p">):</span>
     <span class="n">T6</span> <span class="o">=</span>  <span class="n">A_u</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span> <span class="o">/</span> <span class="n">A_u</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
     <span class="n">T5</span> <span class="o">=</span> <span class="p">(</span><span class="n">A_u</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span> <span class="o">-</span> <span class="n">A_u</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span><span class="o">*</span><span class="n">T6</span><span class="p">)</span> <span class="o">/</span> <span class="n">A_u</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -14532,7 +14537,7 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[331]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[216]:</div>
 
 
 
@@ -14550,7 +14555,7 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[328]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[217]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Vamos comparar com b</span>
@@ -14603,56 +14608,75 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Os dois valores são iguais, portanto nosso algoritmo funciona.</p>
+<p>Os dois valores são iguais, portanto, nosso algoritmo funciona.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Redu&#231;&#227;o-&#224;-forma-de-Gauss-Jordan">Redu&#231;&#227;o &#224; forma de Gauss-Jordan<a class="anchor-link" href="#Redu&#231;&#227;o-&#224;-forma-de-Gauss-Jordan">&#182;</a></h4>
+<h4 id="Redu&#231;&#227;o-&#224;-forma-de-Gauss-Jordan">Redu&#231;&#227;o &#224; forma de Gauss-Jordan<a class="anchor-link" href="#Redu&#231;&#227;o-&#224;-forma-de-Gauss-Jordan">&#182;</a></h4><p>Um algoritmo para reduzir a matriz triangular a uma matriz diagonal é simples e consiste na aplicação do algoritmo anterior em ordem inversa. Isto é, ao invés descermos a matriz diagonalmente e reduzirmos os valores abaixo de $a_{j,j}$ à zero, subimos no sentido contrário e reduzimos os valores acima de $a_{j,j}$ à zero.</p>
+$$
+    a_{i,j} + \gamma a_{j,j} = 0 \Rightarrow
+    a_{i} := a_{i} + \gamma a_{j} \hspace{0.25cm} \forall i &lt; j
+$$<p>Onde agora $j$ varia de $m$ a $1$.</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[304]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[218]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">backward_elimination</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">matriz_triangular_para_diagonal</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
     <span class="c1"># Criar cópia da matriz original</span>
     <span class="n">A_new</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="c1"># Dimensões da matriz</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">A_new</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">A_new</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     
     <span class="c1"># Iterar sobre toda coluna j da matriz, começando</span>
     <span class="c1"># pelo valor mais baixo da sua diagonal.</span>
+    <span class="c1"># Aqui, a função reversed inverte o intervalo retornado</span>
+    <span class="c1"># por range.</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)):</span>
         
-        <span class="c1"># Selecionar o valor na matriz na posição (j, j)</span>
+        <span class="c1"># Selecionar o valor na matriz na posição (j, j),</span>
+        <span class="c1"># ou seja, na sua diagonal</span>
         <span class="n">ajj</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
         
         <span class="c1"># Multiplicar a linha por 1/ajj, para que</span>
         <span class="c1"># o valor em (j,j) = 1</span>
         <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">ajj</span><span class="p">)</span>
         
-        <span class="c1"># Selecionar o valor normalizado</span>
+        <span class="c1"># Atualizar ajj para o valor normalizado</span>
         <span class="n">ajj</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
         
-        <span class="c1"># Para cada linha na matriz, começando pela linha atual,</span>
-        <span class="c1"># transformar os valores diferentes de ajj em 0</span>
-        <span class="c1"># somando suas linhas a um múltiplo de aj</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="p">)):</span>
+        <span class="c1"># Observe que o intervalo retornado pela função range é </span>
+        <span class="c1"># aberto em relação a seu limite superior j, assim,</span>
+        <span class="c1"># o retorno da função reversed resulta em (j-0]</span>
+        <span class="c1"># logo, i varia de 0 a j-1 nesse loop.</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="p">)):</span>  
+        <span class="c1"># Para cada valor no intervalo (j-0]</span>
+        
+            <span class="c1"># Selecionamos o valor aij</span>
             <span class="n">aij</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
             
+            <span class="c1"># Calculamos gamma, ou o coeficiente de ajj para que</span>
+            <span class="c1"># aij + ajj*gamma = 0</span>
             <span class="n">coeficiente</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">aij</span><span class="p">)</span> <span class="o">/</span> <span class="n">ajj</span> <span class="o">*</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">aij</span><span class="p">)</span>
             
+            <span class="c1"># aj * gamma</span>
             <span class="n">A_i</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">coeficiente</span>
             
             <span class="c1"># Atualizar linha i com o novo valor</span>
+            <span class="c1"># ai + aj*gamma = 0</span>
             <span class="n">A_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">A_i</span>
-            
+    
     <span class="k">return</span> <span class="n">A_new</span>
 
-<span class="n">backward_elimination</span><span class="p">(</span><span class="n">A_u</span><span class="p">)</span>
+<span class="n">A_d</span> <span class="o">=</span> <span class="n">matriz_triangular_para_diagonal</span><span class="p">(</span><span class="n">A_u</span><span class="p">)</span>
+<span class="n">A_d</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14668,24 +14692,18 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[304]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[218]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[ 1.        ,  0.        ,  0.        ,  0.        ,  0.        ,
-         0.        , 17.14285714],
-       [ 0.        ,  1.        ,  0.        ,  0.        ,  0.        ,
-         0.        , 21.42857143],
-       [ 0.        ,  0.        ,  1.        ,  0.        ,  0.        ,
-         0.        , 27.14285714],
-       [ 0.        ,  0.        ,  0.        ,  1.        ,  0.        ,
-         0.        , 17.14285714],
-       [ 0.        ,  0.        ,  0.        ,  0.        ,  1.        ,
-         0.        , 21.42857143],
-       [ 0.        ,  0.        ,  0.        ,  0.        ,  0.        ,
-         1.        , 27.14285714]])</pre>
+<pre>array([[ 1.  ,  0.  ,  0.  ,  0.  ,  0.  ,  0.  , 17.14],
+       [ 0.  ,  1.  ,  0.  ,  0.  ,  0.  ,  0.  , 21.43],
+       [ 0.  ,  0.  ,  1.  ,  0.  ,  0.  ,  0.  , 27.14],
+       [ 0.  ,  0.  ,  0.  ,  1.  ,  0.  ,  0.  , 17.14],
+       [ 0.  ,  0.  ,  0.  ,  0.  ,  1.  ,  0.  , 21.43],
+       [ 0.  ,  0.  ,  0.  ,  0.  ,  0.  ,  1.  , 27.14]])</pre>
 </div>
 
 </div>
@@ -14694,13 +14712,19 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Agora podemos verificar o resultado multiplicando a última coluna da matriz diagonal <code>A_d</code> pela matriz original <code>A</code>:</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[288]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[219]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">@</span> <span class="p">(</span><span class="n">A_id</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">@</span> <span class="n">A_d</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -14716,7 +14740,7 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[288]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[219]:</div>
 
 
 
@@ -14731,13 +14755,27 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>E o resultado, de fato, é o esperado.</p>
+<p>Podemos então compor as duas funções que criamos para facilitar o processo.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[224]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">resolver</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="c1"># Criar matriz expandida</span>
+    <span class="n">A2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">matriz_triangular_para_diagonal</span><span class="p">(</span><span class="n">matriz_triangular_superior</span><span class="p">(</span><span class="n">A2</span><span class="p">))[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">resolver</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">resolver</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14745,15 +14783,584 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>array([17.14285714, 21.42857143, 27.14285714, 17.14285714, 21.42857143,
+       27.14285714])</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>array([30., 20., 60., 30., 20., 60.])</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Com-pivotamento">Com pivotamento<a class="anchor-link" href="#Com-pivotamento">&#182;</a></h3>
+<h3 id="Com-pivotamento">Com pivotamento<a class="anchor-link" href="#Com-pivotamento">&#182;</a></h3><p>Pivotamento envolve reordenar as colunas e linhas da matriz em cada passo da eliminação Gaussiana, para que o pivô atual seja o maior valor da matriz em um passo específico.</p>
+<p>Para facilitar o processo primeiro implementamos funções para trocar duas linhas e duas colunas de uma matriz.</p>
+
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[121]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">trocar_linha</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Troca a linha i pela linha j de uma matriz A</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># É importante copiar a linha, pois caso contrário</span>
+    <span class="c1"># linha_i é uma referência à matriz original,</span>
+    <span class="c1"># e alterar A[i] alteraria a linha_i também.</span>
+    <span class="n">linha_i</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">,:]</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">linha_i</span>
+    <span class="k">return</span> <span class="n">A</span>
+
+<span class="k">def</span> <span class="nf">trocar_coluna</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Troca a coluna i pela coluna j de uma matriz A</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">linha_i</span> <span class="o">=</span> <span class="n">A</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">A</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span>
+    <span class="n">A</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">linha_i</span>
+    <span class="k">return</span> <span class="n">A</span>
+    
+<span class="n">matriz_teste</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">matriz_teste</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">trocar_linha</span><span class="p">(</span><span class="n">matriz_teste</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">matriz_teste</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">trocar_coluna</span><span class="p">(</span><span class="n">matriz_teste</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>matrix([[1, 2],
+        [3, 4]])</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>matrix([[3, 4],
+        [1, 2]])</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>matrix([[3, 4],
+        [1, 2]])</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>matrix([[4, 3],
+        [2, 1]])</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="b.2)">b.2)<a class="anchor-link" href="#b.2)">&#182;</a></h2>
+<blockquote><p><strong>NOTA</strong> Observe que a variável <code>matriz_teste</code> utilizada como parâmetro das funções <code>trocar_linha</code> e <code>trocar_coluna</code> é alterada dentro da função, e a segunda linha <code>display(matriz_teste)</code> nos mostra uma matriz de formato $\begin{bmatrix} 3 &amp; 4 \\ 1 &amp; 2 \end{bmatrix} $. Para evitar esse comportamento, podemos passar como parâmetro uma cópia da matriz que queremos trocar as linhas/colunas: <code>matriz_2 = trocar_linha(matriz_teste.copy(), 0, 1))</code>.</p>
+</blockquote>
+<p>Agora podemos implementar a solução com pivotamento reutilizando a função para a eliminação Gaussiana definida antes:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[225]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Vamos testar com o sistema de equações providenciado no problema.</span>
+<span class="n">A2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">max_lin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">M2</span><span class="p">[</span><span class="mi">0</span><span class="p">,:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">max_col</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">M2</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">M2</span><span class="p">)</span>
+<span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">M2</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">M2</span><span class="p">))</span>
+
+<span class="c1"># Um cuidado necessário nessa implementação deve ser o de não considerar</span>
+<span class="c1"># a última coluna na busca pelo maior valor da matriz, pois esta contém</span>
+<span class="c1"># os valores de variáveis dependentes.</span>
+<span class="k">def</span> <span class="nf">maximizar_pivo</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ignore_last_col</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">I</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="n">M_view</span> <span class="o">=</span> <span class="n">M</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">ignore_last_col</span> <span class="k">else</span> <span class="n">M</span>
+    
+    <span class="c1"># Caso tenhamos mais de um valor maior</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">M_view</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">v</span><span class="o">/</span><span class="n">M_view</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span> <span class="o">-</span> <span class="n">i</span><span class="o">*</span><span class="n">M_view</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    
+    <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+        <span class="n">display</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coordenadas do valor maior: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="n">trocar_linha</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">trocar_coluna</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+    
+    <span class="c1"># Fazer mesma alteração na matriz identidade</span>
+    <span class="k">if</span> <span class="n">I</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">trocar_linha</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">trocar_coluna</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">M</span><span class="p">,</span> <span class="n">I</span>
+
+<span class="k">def</span> <span class="nf">matriz_triangular_superior</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">pivotamento</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calcula a matriz triangular superior da matriz M utilizando</span>
+<span class="sd">        um algoritmo simples da eliminação de Gauss</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Criar cópia da matriz expandida</span>
+    <span class="n">A_new</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A_new</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A_new</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    
+    <span class="c1"># Para cada coluna - 1 na matriz (ignoramos a coluna das variáveis dependentes)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        
+        <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+            <span class="n">display</span><span class="p">(</span><span class="s1">&#39;Estado atual da matriz:&#39;</span><span class="p">)</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">A_new</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+        
+        <span class="c1"># Maximizar pivô</span>
+        <span class="k">if</span> <span class="n">pivotamento</span><span class="p">:</span>
+            <span class="n">maximizar_pivo</span><span class="p">(</span><span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">:,</span> <span class="n">j</span><span class="p">:],</span> <span class="n">j</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">I</span><span class="p">[</span><span class="n">j</span><span class="p">:,</span> <span class="n">j</span><span class="p">:])</span>
+            
+        <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+            <span class="n">display</span><span class="p">(</span><span class="s1">&#39;Resultado pivotamento:&#39;</span><span class="p">)</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">A_new</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+        
+        <span class="c1"># Selecionamos o pivô, como não há pivotamento, selecionamos os valores da diagonal</span>
+        <span class="n">ajj</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+        
+        <span class="c1"># Para cada linha i abaixo de j</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+            <span class="c1"># Selecionamos o valor da linha i na coluna j (abaixo de ajj)</span>
+            <span class="n">aij</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+            
+            <span class="c1"># Calculamos o múltiplo necessário do pivô ajj para que</span>
+            <span class="c1"># x * ajj + aij = 0</span>
+            <span class="n">coeficiente</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">aij</span><span class="p">)</span> <span class="o">/</span> <span class="n">ajj</span> <span class="o">*</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">aij</span><span class="p">)</span>
+            
+            <span class="c1"># Multiplicamos a linha inteira pelo coeficiente calculado</span>
+            <span class="n">A_i</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">,:]</span><span class="o">*</span><span class="n">coeficiente</span>
+            
+            <span class="c1"># Atualizamos o valor da linha para o novo valor, que </span>
+            <span class="c1"># deve ser 0 na posição aij</span>
+            <span class="n">A_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">i</span><span class="p">,:]</span><span class="o">+</span><span class="n">A_i</span>
+            
+        <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+            <span class="n">display</span><span class="p">(</span><span class="s1">&#39;Resultado:&#39;</span><span class="p">)</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">A_new</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">A_new</span><span class="p">,</span> <span class="n">I</span>
+
+
+<span class="n">display</span><span class="p">(</span><span class="s1">&#39;Matriz original:&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">A2</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">display</span><span class="p">(</span><span class="s1">&#39;Matriz escalonada sem pivotamento: &#39;</span><span class="p">)</span>
+<span class="n">A_es</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">matriz_triangular_superior</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">A_es</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">display</span><span class="p">(</span><span class="s1">&#39;Matriz escalonada com pivotamento: &#39;</span><span class="p">)</span>
+<span class="n">A_ec</span><span class="p">,</span> <span class="n">I</span> <span class="o">=</span> <span class="n">matriz_triangular_superior</span><span class="p">(</span><span class="n">A2</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">A_ec</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>&#39;Matriz original:&#39;</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>array([[ 4., -1.,  0., -1.,  0.,  0., 30.],
+       [-1.,  4., -1.,  0., -1.,  0., 20.],
+       [ 0., -1.,  4.,  0.,  0., -1., 60.],
+       [-1.,  0.,  0.,  4., -1.,  0., 30.],
+       [ 0., -1.,  0., -1.,  4., -1., 20.],
+       [ 0.,  0., -1.,  0., -1.,  4., 60.]])</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>&#39;Matriz escalonada sem pivotamento: &#39;</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>array([[ 4. , -1. ,  0. , -1. ,  0. ,  0. , 30. ],
+       [ 0. ,  3.8, -1. , -0.2, -1. ,  0. , 27.5],
+       [ 0. ,  0. ,  3.7, -0.1, -0.3, -1. , 67.3],
+       [ 0. ,  0. ,  0. ,  3.7, -1.1, -0. , 40.5],
+       [ 0. ,  0. ,  0. ,  0. ,  3.4, -1.1, 43.8],
+       [ 0. ,  0. ,  0. ,  0. ,  0. ,  3.4, 92.1]])</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>&#39;Matriz escalonada com pivotamento: &#39;</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>array([[ 4. , -1. ,  0. , -1. ,  0. ,  0. , 30. ],
+       [ 0. ,  4. , -1. ,  0. ,  0. , -1. , 60. ],
+       [ 0. ,  0. ,  4. , -1. , -1. , -1. , 20. ],
+       [ 0. ,  0. ,  0. ,  3.5, -0.5, -0.2, 42.5],
+       [ 0. ,  0. ,  0. ,  0. ,  3.5, -0.5, 83. ],
+       [ 0. ,  0. ,  0. ,  0. ,  0. ,  3.1, 66.3]])</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>array([[1., 0., 0., 0., 0., 0.],
+       [0., 1., 0., 0., 0., 0.],
+       [0., 0., 1., 0., 0., 0.],
+       [0., 0., 0., 1., 0., 0.],
+       [0., 0., 0., 0., 1., 0.],
+       [0., 0., 0., 0., 0., 1.]])</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Verificando-resultado-da-matriz-escalonada-com-pivotamento">Verificando resultado da matriz escalonada com pivotamento<a class="anchor-link" href="#Verificando-resultado-da-matriz-escalonada-com-pivotamento">&#182;</a></h3><p>Podemos verificar o resultado com a função <code>resolver_sistema(A)</code> que definimos anteriormente:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[231]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">resolver_sistema</span><span class="p">(</span><span class="n">A_ec</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">A</span><span class="nd">@x</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>array([17.14285714, 21.42857143, 27.14285714, 17.14285714, 21.42857143,
+       27.14285714])</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>array([30., 20., 60., 30., 20., 60.])</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[228]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">matriz_triangular_para_diagonal</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">pivotamento</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="c1"># Criar cópia da matriz original</span>
+    <span class="n">A_new</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="c1"># Dimensões da matriz</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">A_new</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">A_new</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    
+    <span class="c1"># Iterar sobre toda coluna j da matriz, começando</span>
+    <span class="c1"># pelo valor mais baixo da sua diagonal.</span>
+    <span class="c1"># Aqui, a função reversed inverte o intervalo retornado</span>
+    <span class="c1"># por range.</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)):</span>
+        
+        
+        <span class="c1"># Selecionar o valor na matriz na posição (j, j),</span>
+        <span class="c1"># ou seja, na sua diagonal</span>
+        <span class="n">ajj</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+        
+        <span class="c1"># Multiplicar a linha por 1/ajj, para que</span>
+        <span class="c1"># o valor em (j,j) = 1</span>
+        <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">ajj</span><span class="p">)</span>
+        
+        <span class="c1"># Atualizar ajj para o valor normalizado</span>
+        <span class="n">ajj</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="p">]</span>
+        
+        <span class="c1"># Observe que o intervalo retornado pela função range é </span>
+        <span class="c1"># aberto em relação a seu limite superior j, assim,</span>
+        <span class="c1"># o retorno da função reversed resulta em (j-0]</span>
+        <span class="c1"># logo, i varia de 0 a j-1 nesse loop.</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">j</span><span class="p">)):</span>  
+        <span class="c1"># Para cada valor no intervalo (j-0]</span>
+        
+            <span class="k">if</span> <span class="n">pivotamento</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">maximizar_pivo</span><span class="p">(</span><span class="n">A_new</span><span class="p">[:</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">I</span><span class="p">[:</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="n">i</span><span class="p">])</span>
+        
+            <span class="c1"># Selecionamos o valor aij</span>
+            <span class="n">aij</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+            
+            <span class="c1"># Calculamos gamma, ou o coeficiente de ajj para que</span>
+            <span class="c1"># aij + ajj*gamma = 0</span>
+            <span class="n">coeficiente</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">aij</span><span class="p">)</span> <span class="o">/</span> <span class="n">ajj</span> <span class="o">*</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">aij</span><span class="p">)</span>
+            
+            <span class="c1"># aj * gamma</span>
+            <span class="n">A_i</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">coeficiente</span>
+            
+            <span class="c1"># Atualizar linha i com o novo valor</span>
+            <span class="c1"># ai + aj*gamma = 0</span>
+            <span class="n">A_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">A_i</span>
+    
+    <span class="k">return</span> <span class="n">A_new</span><span class="p">,</span> <span class="n">I</span>
+
+<span class="n">A_ecd</span><span class="p">,</span> <span class="n">I</span> <span class="o">=</span> <span class="n">matriz_triangular_para_diagonal</span><span class="p">(</span><span class="n">A_ec</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">A_ecd</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">A</span> <span class="o">@</span> <span class="n">A_ecd</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>array([[ 1. ,  0. ,  0. ,  0. ,  0. ,  0. , 18.3],
+       [ 0. ,  1. ,  0. ,  0. ,  0. ,  0. , 25.7],
+       [ 0. ,  0. ,  1. ,  0. ,  0. ,  0. , 21.5],
+       [ 0. ,  0. ,  0. ,  1. ,  0. ,  0. , 17.6],
+       [ 0. ,  0. ,  0. ,  0. ,  1. ,  0. , 27.1],
+       [ 0. ,  0. ,  0. ,  0. ,  0. ,  1. , 21.4]])</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[228]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>array([[30.        ],
+       [35.9630102 ],
+       [38.95408163],
+       [24.73852041],
+       [43.85204082],
+       [37.04081633]])</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="b.2)-Fatora&#231;&#227;o-LU">b.2) <a href="https://pt.wikipedia.org/wiki/Decomposi%C3%A7%C3%A3o_LU">Fatora&#231;&#227;o LU</a><a class="anchor-link" href="#b.2)-Fatora&#231;&#227;o-LU">&#182;</a></h2>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14774,7 +15381,7 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[135]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[229]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
@@ -14813,7 +15420,7 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[136]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[230]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="nd">@x</span> <span class="c1"># Verificando.</span>
@@ -14832,33 +15439,19 @@ $$<p>Se $j$ varia de $1$ a $m$ numa matriz $A_{m,n}$, a matriz resultante cumpre
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[136]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[230]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>matrix([[30., 20., 60., 30., 20., 60.]])</pre>
+<pre>array([30., 20., 60., 30., 20., 60.])</pre>
 </div>
 
 </div>
 
 </div>
 
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
 </div>

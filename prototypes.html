@@ -7,15 +7,34 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
+        <div class="btn_back"><a href="./index.html"><</a></div>
         <h1>Prototypes</h1>
+        <section>
+            <h2>Catacumba</h2>
+            <p class="subtitle">Unity</p>
+
+            Catacumba is a beat-em-up with RPG aspects that
+            was developed in Unity with premade Assets. I implemented
+            most of the mechanics, my favorite one being a basic 
+            rule-based level generation algorithm with agents that
+            dig corridors and rooms. Another interesting aspect of the 
+            prototype is that the game uses a custom Rendering Pipeline 
+            that I wrote.
+
+            <br>
+            <video controls width="600">
+            <source src="catacumba.mp4" type="video/mp4">
+            </video>
+
+        </section>
         <section>
         <h2>Yawnoc</h2>
         <p class="subtitle">Unity</p>
-        Yawnoc is a puzzle game I've developed in Unity based
+        Yawnoc is a puzzle game I've developed based
         on Conway's Game of Life. Green cells are collectible,
         red cells are obstacles, white cells are living.
         One of the technical aspects of this prototype
-        that I enjoyed working on, is the fact that there is
+        that I enjoyed working on, is the fact that there are 
         no sprites involved in the game. UI icons, board,
         effects, are all shader code. 
 
@@ -63,8 +82,8 @@
             The Game of Life as Procedural Art
         </h3>
 
-        A small detail in the prototype is that in the
-        background cells are colored based on how many times
+        A small detail in the prototype is that, in the
+        background, cells are colored based on how many times
         a live cell has been there, generating a colored heatmap.
         This results in several interesting patterns emerging 
         from the board.
@@ -78,8 +97,8 @@
             </tr>    
         </table>
 
-        Not exactly worthy of a museum, but they are 
-        interesting patterns.
+        Not exactly worthy of a museum, but they're 
+        alright.
         </section>
         <section>
 
@@ -97,6 +116,21 @@
         <video controls width="600">
         <source src="pogostick-video.mp4" type="video/mp4">
         </video>
+
+        </section>
+
+        <section>
+            <h2>Space Cabrón</h2>
+            <p class="subtitle">Unity</p>
+
+            A shoot-em-up. Procedural beats and melodies played 
+            by a broken synth I wrote. Player fires according
+            to a beat. Enemies spawn according to another beat.
+            Procedural music is hard.
+
+            <video controls width="600">
+            <source src="space-cabron.webm" type="video/webm">
+            </video>
 
         </section>
 

@@ -1,0 +1,66 @@
+
+body {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Courier New', Courier, monospace;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    padding: 50px;
+
+    border-color: black;
+    border: 1px solid black;
+}
+
+video {
+    display: block;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subtitle {
+    margin-top:-15px;
+    font-style:italic;
+    font-size: smaller;
+}
+
+
+.tbl_img {
+    width:250px;
+    height:250px;
+    margin: 0px 5px 0px 5px;
+}
+
+.img_menu {
+    border-radius: 50%;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tbl_menu {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: fit-content;
+}
+
+code {
+    padding: -50px;
+}

@@ -112,11 +112,21 @@ h1 {
 
 .cv_info > h1 {
     text-align: left;
+    vertical-align:middle;
     margin: 0px;
+    height: 80px;
 }
 
 .cv_info > p {
-    margin: 0px;
+    margin: 0px; 
+}
+
+.cv_info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    width:auto;
+    height:80px;
 }
 
 .emprego {

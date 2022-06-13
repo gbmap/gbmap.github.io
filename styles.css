@@ -123,15 +123,16 @@ a:hover {
     /* transform: translateY(-50%); */
 }
 
-.index_box > img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-}
 
 
 .img_menu {
+    max-width: 100%;
+    max-height: 100%;
+    /* width: auto;
+    height: auto; */
+    /* width: calc(30vmin); */
+    /* width: 500px; */
+    height: calc(30vmin);
     border-radius: 50%;
     display:block;
     align-self: center;

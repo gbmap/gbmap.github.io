@@ -5,23 +5,36 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
-    <body>
-        <h1>Gabriel M.'s Portfolio</h1>
-        <img width="300px" class="img_menu" src="https://avatars.githubusercontent.com/u/6232720?v=4"/>
-        <br>
-        <table class="tbl_menu">
-            <tr>
-                <td><a href="https://github.com/gbmap"><img src="imgs/GitHub-Mark-64px.png" class="social_media_icon"/></a></td>
-                <td><a href="https://www.linkedin.com/in/gabriel-m-58397a87/"><img src="imgs/LinkedIn_logo_initials.png" class="social_media_icon"/></a></td>
-            </tr>
-        </table>
-        <table style="margin-top: 10px" class="tbl_menu">
-            <tr>
-                <td><a href="./prototypes.html">Prototypes</a></td>
-                <td>|</td>
-                <td><a href="./games.html">Games</a></td>
-            </tr>
-        </table>
+    <body style="align-items: center;" id="index_bg">
+        <!-- <img src="https://raw.githubusercontent.com/gbmap/gbmap/master/pulsar.gif" style="border-radius: 20px;"/> -->
+        <div class="index_box">
+            <!-- <div style="display: flex; flex-direction: row; "> -->
+                <img width="300px" height="300px" class="img_menu" src="https://avatars.githubusercontent.com/u/6232720?v=4"/>
+                <div class="index_tri" id="blur"></div>
+                <div class="index_tri"></div>
+                <div class="index_chatbox">
+                <p>
+                <b style="color: rgb(53, 196, 77);">λ ></b> Hi! I am <b>Gabriel</b>. &#128126;
+                <br><br>
+                This is my portfolio/GitHub landing page/agglomerate of things I've done.
+                <br><br>
+                I'm a math nerd and game developer. My ultimate goal is world domination
+                with my automated shitty cartoons using ML, Blender and Python.
+                <br><br>
+                From here you can check some of the <a href="./prototypes.html"> Prototypes </a> and <a href="./games.html"> Games </a> I've worked on.
+                <br>
+                </p>
+                <p style="font-style: italic; font-size: calc(1.5vmin);  ">
+                Fun fact: This background image is a Voronoi pattern sampled with UVs rotated by
+                another Voronoi pattern. Recursivoronoi. Woah.
+                </p>
+                <div align="center" class="social_media">
+                    <span style='font-size:calc(5vmin);'><a class="social_media_link" href="https://www.linkedin.com/in/gabriel-m-58397a87/" title="LinkedIn" >&#128188;</a></span>
+                    <span style='font-size:calc(5vmin);'><a class="social_media_link" href="https://github.com/gbmap" title="GitHub" >&#128025;</a></span>
+                </div>
+                </div>
+            <!-- </div> -->
+        </div>
 
     </body>
 </html>

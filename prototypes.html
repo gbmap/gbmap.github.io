@@ -7,10 +7,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-        <div class="btn_back"><a href="./index.html"><</a></div>
+        <span style="font-size: 100px"><a class="btn_back" href="index.html" style="text-decoration:none">&#128072;</a></span>
         <h1>Prototypes</h1>
         <section>
-            <h2>Catacumba</h2>
+            <h2><a href="./prototypes/catacumba.html">Catacumba</a></h2>
             <p class="subtitle">Unity</p>
 
             Catacumba is a beat-em-up with RPG aspects that
@@ -23,82 +23,23 @@
 
             <br>
             <video controls width="600">
-            <source src="catacumba.mp4" type="video/mp4">
+            <source src="./prototypes/catacumba.mp4" type="video/mp4">
             </video>
 
         </section>
         <section>
-        <h2>Yawnoc</h2>
-        <p class="subtitle">Unity</p>
-        Yawnoc is a puzzle game I've developed based
-        on Conway's Game of Life. Green cells are collectible,
-        red cells are obstacles, white cells are living.
-        One of the technical aspects of this prototype
-        that I enjoyed working on, is the fact that there are 
-        no sprites involved in the game. UI icons, board,
-        effects, are all shader code. 
+            <h2><a href="./prototypes/yawnoc.html">Yawnoc</a></h2>
+            <p class="subtitle">Unity</p>
+            Yawnoc is an experimental puzzle game I've developed based
+            on Conway's Game of Life. Green cells are collectible,
+            red cells are obstacles, white cells are living. The player's
+            objective is to collect every green cell by placing different
+            cells on the board and having them interact with each other.
 
-        <br>
-        <video controls width="600">
-        <source src="yawnoc1.mp4" type="video/mp4">
-        </video>
-
-        <h3>Rules and Ruleset</h3>
-
-        The board is actually developed with more rules
-        than the classic game, because it was important
-        for me to be able to implement different
-        rules and test them quickly.
-
-        <br>
-        New rules can be specified implementing an abstract
-        class and the method <code>Apply(...)</code>.
-        <br>
-        <pre>
-            <code class="language-cs">
-                public abstract ECellType Apply(Board b, int x, int y);
-            </code>
-        </pre>
-
-        <br>
-        A ruleset is then applied with:
-        <br>
-        <pre>
-            <code class="language-cs">
-                public void Apply(Conway.Board b)
-                {
-                    b.ForEachCell(delegate (Board.ForEachCellParams p)
-                    {
-                        foreach (RuleBase r in Rules)
-                        {
-                            b.ApplyRule(r, p.Position.x, p.Position.y);
-                        }
-                    });
-                }
-            </code>
-        </pre>
-
-        <h3>
-            The Game of Life as Procedural Art
-        </h3>
-
-        A small detail in the prototype is that, in the
-        background, cells are colored based on how many times
-        a live cell has been there, generating a colored heatmap.
-        This results in several interesting patterns emerging 
-        from the board.
-
-        <br>
-        <table class="tbl_menu" >
-            <tr>
-                <img class="tbl_img" src="yawnoc-pattern1.png"/>
-                <img class="tbl_img" src="yawnoc-pattern2.png"/>
-                <img class="tbl_img" src="yawnoc-pattern3.png"/>
-            </tr>    
-        </table>
-
-        Not exactly worthy of a museum, but they're 
-        alright.
+            <br>
+            <video controls width="600">
+            <source src="./prototypes/yawnoc_gameplay.webm" type="video/mp4">
+            </video>
         </section>
         <section>
 

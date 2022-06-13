@@ -1,0 +1,142 @@
+<html>
+     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-csharp.min.js" integrity="sha512-iR8+EGmYvdIQMgGdzdX3GVv/gjdRbwweyaK5bOyLDmmZfOZ1X+TLEiBtcs3tg6GcZCBT75JnmwZZyYXAGojwnA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <span style="font-size: 100px"><a class="btn_back" href="../prototypes.html" style="text-decoration:none">&#128072;</a></span>
+<h2>Yawnoc</h2>
+<p class="subtitle">Unity</p>
+Yawnoc is an experimental puzzle game I've developed based
+on Conway's Game of Life. Green cells are collectible,
+red cells are obstacles, white cells are living. The player's
+objective is to collect every green cell by placing different
+cells on the board and having them interact with each other.
+
+One of the technical aspects of this prototype
+that I enjoyed working on, is the fact that there are 
+no sprites involved in the game. UI icons, board,
+effects, are all shader code. I've tried to develop it 
+without any text in the UI as a design challenge. 
+
+<br>
+<video controls width="600">
+<source src="yawnoc_gameplay.webm" type="video/mp4">
+</video>
+
+<h3>Rules and Ruleset</h3>
+
+The board is actually developed with more rules
+than the classic game, because it was important
+for me to be able to implement different
+rules and test them quickly.
+
+Each rule is responsible for different cell type behaviors
+or, if needed, macro behavior with multiple cells.
+
+<br>
+New rules can be specified implementing an abstract
+class and the method <code>Apply(...)</code>.
+<br>
+<pre>
+    <code class="language-cs">
+        public abstract ECellType Apply(Board b, int x, int y);
+    </code>
+</pre>
+
+<br>
+A ruleset is then applied with:
+<br>
+<pre>
+    <code class="language-cs">
+        public void Apply(Conway.Board b)
+        {
+            b.ForEachCell(delegate (Board.ForEachCellParams p)
+            {
+                foreach (RuleBase r in Rules)
+                {
+                    b.ApplyRule(r, p.Position.x, p.Position.y);
+                }
+            });
+        }
+    </code>
+</pre>
+
+For example, Conway's rule is implemented as:
+
+<pre>
+    <code class="language-cs">
+	[CreateAssetMenu(menuName="Conway/Rules/Conway", fileName="Conway")]
+	public class RuleConway : RuleBase
+	{
+		public ECellType Alive;
+		public ECellType Dead;
+
+		public override ECellType Apply(Board b, int cx, int cy)
+		{
+			int liveNeighbors = 0;
+			for (int ny = -1; ny <= 1; ny++)
+			{
+				for (int nx = -1; nx <= 1; nx++)
+				{
+					// Skip middle cell.
+					if (nx == 0 && ny == 0) 
+						continue;
+
+					int x = (cx+nx); 
+					int y = (cy+ny);
+
+					// Skip cells outside the board.
+					if (!b.IsInsideBoard(x,y))
+						continue;
+
+					int n = Convert.ToInt32(b.PreviousState.Get(x, y) == Alive);
+					liveNeighbors += n;
+				}
+			}
+
+			if (b.PreviousState.Get(cx, cy) == Alive) 
+			{
+				bool alive = (liveNeighbors >= 2 && liveNeighbors <= 3);
+				return  alive ? Alive : Dead;
+			} 
+			else
+			{
+				bool alive = liveNeighbors == 3;
+				return alive ? Alive : b.PreviousState.Get(cx, cy);
+			}
+		}
+	}
+    </code>
+    
+</pre>
+
+<h3>
+    The Game of Life as Procedural Art
+</h3>
+
+A small detail in the prototype is that, in the
+background, cells are colored based on how many times
+a live cell has been there, generating a heatmap that 
+can be colored with an arbitrary gradient.
+This results in several interesting patterns emerging 
+from the board. 
+
+<br>
+<!-- <table >
+    <tr> -->
+        <div align="center" style="margin: 10px;">
+        <img src="yawnoc1.gif"/>
+        <img src="yawnoc2.gif"/>
+        <img width="200px" src="yawnoc4.gif"/>
+        </div>
+    <!-- </tr>    
+</table> -->
+<br>
+
+Not exactly worthy of a museum, but they're 
+alright.
+</body>
+</html>

@@ -203,8 +203,23 @@ a:hover {
 .cv {
     margin: 0px;
     border: none;
-    background-color: rgb(235, 223, 203);
+    background-color: rgb(255, 255, 255);
     color: rgb(12, 14, 15);
+    max-width: fit-content;
+}
+
+#cv_name {
+    font-size: 20pt; 
+    text-align: right;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+#cv_title {
+    font-size: 14pt;
+    text-align: right;
+    font-weight: normal;
+    margin-top: 0px;
 }
 
 .cv > h1 {
@@ -223,14 +238,29 @@ a:hover {
     font-size: 8pt;
 }
 .cv_title {
-    font-size: xx-large;
+    /* font-size: xx-large; */
+    font-size: 12pt;
     margin-bottom: 0px;
+    margin-top: 10px;
+    margin-right: 5px;
+    width: 25%;
+    text-align: right;
+}
+
+.cv_section {
+    display: flex;
+    flex-direction: row;
+}
+
+.cv_description {
+    width: 75%;
 }
 
 .courses {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 9px;
 }
 
 .courses > p {
@@ -282,9 +312,16 @@ a:hover {
     height:80px;
 }
 
+.cv_contact > p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    /* margin: 0px; */
+    /* padding: 0px; */
+}
+
 .emprego {
-    border-left: solid 1px rgb(12, 14, 15);
-    padding-left: 15px;
+    /* border-left: solid 1px rgb(12, 14, 15); */
+    padding-left: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -312,6 +349,45 @@ a:hover {
 .emprego > li {
     margin-left: 10px;
 }
+
+.techs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 4px 0px;
+}
+
+/* .techs > div > p {
+    border: 2px;
+    font-style: italic;
+    margin-left: 3px;
+    margin-right: 3px;
+} */
+
+/* Solid rounded border div with uppercase text inside it */
+.techs > div > p {
+    font-size: 10pt;
+    font-weight: bold;
+    /* border: solid 1px rgb(63, 66, 68); */
+    background-color: rgb(221, 221, 221);
+    color: rgb(99, 99, 99);
+    /* border-radius: 5px; */
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2px 5px;
+    padding: 8px;
+} 
+
+/* .techs > div {
+    border: 10px;
+    border-style: solid;
+    border-color: red;
+} */
+
+/*
+    GLOBAL
+*/
 
 @keyframes scale {
     from { 

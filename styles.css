@@ -70,14 +70,14 @@ h1 {
 
 @keyframes link_hover {
     from {
-        color: whitesmoke;
-        background-color: rgb(13, 17, 23);
+        color: rgb(53, 196, 77);
+        /* background-color: rgb(13, 17, 23); */
         /* text-decoration: none; */
         /* text-decoration-style: dotted; */
     }
     to {
-        color: rgb(214, 214, 214);
-        background-color: rgb(33, 47, 53);
+        color: rgb(53, 196, 77);
+        background-color: rgb(23, 136, 37);
     }
 }
 
@@ -86,7 +86,7 @@ a {
     /* text-decoration: none; */
     text-decoration: underline;
     text-decoration-style: dotted;
-    color: whitesmoke;
+    color: rgb(53, 196, 77);
     border-radius: 5px;
 }
 

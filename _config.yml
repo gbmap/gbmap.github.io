@@ -2,6 +2,8 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
+remote_theme: alshedivat/al-folio
+
 title: title # the website title (if blank, full name will be used instead)
 first_name: Gabriel
 middle_name: M. A.

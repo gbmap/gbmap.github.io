@@ -247,6 +247,13 @@ a:hover {
     text-align: right;
 }
 
+.cv_title > h4 {
+    font-size: 12pt;
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+    font-weight: normal;
+}
+
 .cv_section {
     display: flex;
     flex-direction: row;

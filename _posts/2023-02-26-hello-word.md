@@ -13,4 +13,4 @@ _noun_
 - An assurance or promise; sworn intention.
 - A verbal signal; a password or watchword.
 - Discourse or talk; speech.
-- The text of a vocal composition; lyrics.
+- The text of a vocal composition; lyrics. 

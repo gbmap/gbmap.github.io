@@ -1,9 +1,5 @@
 
 
-.img-container {
-
-}
-
 .media-container {
     position: absolute;
     top: 0;
@@ -21,6 +17,15 @@
     height: 100%;
     object-fit: cover;
 }
+
+.media-container > h1, h2, p {
+    background-color: black;
+}
+
+/* .media-container > iframe {
+  width: 100vw;
+  height: calc(100vw/1.77);
+} */
 
 /* .video-container {
     height: 100%;

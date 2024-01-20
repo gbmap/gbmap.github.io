@@ -14,15 +14,16 @@
   padding: 0;
   max-width: none;
   max-height: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
-
-.item {
-  /* z-index: -10; */
-  /* background-color: rgb(33, 47, 53); */
-    /* padding: 10px; */
+.preview-body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
-
 
 .content {
     /* padding: 10px; */
@@ -54,42 +55,8 @@
 
 }
 
-.photothumb{
+.media-container > img {
   width: 100%;
-}
-
-.title {
-  padding: 20px;
- }
-
-.title h3{
-  font-size: 1.2em;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.project .title{
-  background-color: #607D8B;
-}
-
-.blog .title{
-  background-color: #ff9800;
-}
-
-.photo .title{
-  background-color: #f44336;
-}
-
-.desc{
-  padding: 10px 10px 5px 10px;
-}
-
-.desc img{
-  width: 50%;
-  margin: 0 10px 10px 0;
-  float: left;
-}
-
-.desc p{
-  margin-bottom: 10px;
+  height: 100%;
+  object-fit: cover;
 }

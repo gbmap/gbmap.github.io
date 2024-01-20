@@ -19,10 +19,13 @@ function resizeInstance(instance){
   resizeGridItem(item);
 }
 
-window.onload = resizeAllGridItems;
+// window.onload = resizeAllGridItems;
 window.addEventListener("resize", resizeAllGridItems);
+
+setTimeout(resizeAllGridItems, 500);
 
 allItems = document.getElementsByClassName("item");
 for(x=0;x<allItems.length;x++){
   imagesLoaded( allItems[x], resizeInstance);
 }
+

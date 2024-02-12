@@ -23,6 +23,13 @@ h1, h2, p, code {
     padding: 5px;
 }
 
+.title-link {
+    background-color: rgb(32, 37, 44);
+    padding: 5px;
+    font-size: 24pt;
+    border-radius: 0px;
+}
+
 .iframe-container {
     position: absolute;
     top: 0;

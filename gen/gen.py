@@ -7,6 +7,7 @@ import json
 import random
 import requests
 import markdown
+import re
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
@@ -14,7 +15,8 @@ CONTENT_TAG = "%%CONTENT%%"
 PAGES_DIR = "./pages"
 GH_PROFILE = "https://github.com/gbmap"
 GH_REPOS = [
-    ("poormans-weather-station", "main"), ("AgentBasedMapGenerator", "master"), ("pytorch_dcgan", "main"), ("pytorch_style_transfer", "main")
+    ("poormans-weather-station", "main"), ("AgentBasedMapGenerator", "master"), ("pytorch_dcgan", "main"), ("pytorch_style_transfer", "main"),
+    ("pogostick", "master"), ("yawnoc", "main"), ("beat-em-up", "development"), ("space-cabron", "master"), ("htb", "main")
 ]
 GH_SHADERS_REPO = "https://github.com/gbmap/glsl-sandbox"
 GH_SHADERS_BRANCH = "main"
@@ -65,16 +67,13 @@ def generate_preview(html: str, href: str = None) -> str:
         for tag in other_tags:
             content_wrapper.append(tag.extract())
 
-        # if href:
-        #     # push an a element to the content wrapper that fills everything with a redirect link
-        #     a = soup.new_tag('a')
-        #     a['href'] = href
-        #     a['style'] = 'position: absolute; top: 0; right: 0; bottom: 0; left: 0; color: transparent; z-index:10'
-        #     soup.append(a)
-
-
         soup.append(content_wrapper)
         soup.append(media_container)
+
+    for x in soup.find_all(["p", "h1"]): 
+        if len(x.get_text(strip=True)) == 0: 
+            print(x)
+            x.extract() 
 
     # Return the modified HTML as a string
     return str(soup).replace("&amp;", "&")
@@ -86,12 +85,20 @@ def gen_pages(html_item_template: str , pages_folder: str = "./pages") -> Iterab
 def gen_repos(html_item_template: str, profile:str = GH_PROFILE, repos: Iterable[str] = GH_REPOS):
     def _repo(repo, branch):
         base_url = f'{profile}/{repo}/raw/{branch}/'
+        url = f"{profile}/{repo}"
         text = requests.get(base_url + 'README.md').text
+        # print(text)
 
+        r = re.compile(r'#+\s*(.*)')
+        title = r.search(text).group(0)
+        text = text.replace(title, f"<a class='title-link' href='{url}'>{title.replace('#', '' ).strip()}</a>")
+      
         # change it to all tags that have a src attr
         soup = BeautifulSoup(text, 'html.parser')
         for tag in soup.find_all(src=True):
             tag['src'] = urljoin(base_url, tag['src'])
+
+       
 
         return str(soup)
 
@@ -107,26 +114,26 @@ def gen_shaders(html_item_template: str, shaders_repo: str = GH_SHADERS_REPO, br
 """
     return [html_preview_from_markdown(md_template.format(os.path.splitext(f['name'])[0], f"{shaders_repo}/raw/{branch}/{f['path']}", os.path.splitext(f['path'])[-1][1:]), html_item_template) for f in json.loads(requests.get(videos_url).text)["payload"]["tree"]["items"]]
 
+
 def html_preview_from_markdown(f: str, html_template: str, href: str = None) -> str:
     return html_template.replace(CONTENT_TAG, generate_preview(markdown.markdown(f), href),)
 
-def gen_index_preview(html_pages, html_repos):
-    prototypes_page = list(filter(lambda t: "prototype" in t[0], html_pages))[0][1]
-    return  prototypes_page + html_repos
+
+def gen_index_preview(_, html_repos):
+    return html_repos
 
 
 def main():
     html_boiler_plate = open("_template.html", "r").read()
     html_item = open("_item_template.html", "r").read()
 
-
     html_pages = gen_pages(html_item)
     _=[open(f"{page}.html", "w").write(html_boiler_plate.replace(CONTENT_TAG, '\n'.join(htmls))) for page, htmls in html_pages]
 
     html_repos = gen_repos(html_item)
-    open(f"repos.html", "w").write(html_boiler_plate.replace(CONTENT_TAG, '\n'.join(html_repos)))
-    open(f"shaders.html", "w").write(html_boiler_plate.replace(CONTENT_TAG, '\n'.join(gen_shaders(html_item))))
-    open(f"index_previews.html", "w").write(html_boiler_plate.replace(CONTENT_TAG, '\n'.join(gen_index_preview(html_pages, html_repos))))
+    open(f"repos.html", "w", encoding='utf-8').write(html_boiler_plate.replace(CONTENT_TAG, '\n'.join(html_repos)))
+    open(f"shaders.html", "w", encoding='utf-8').write(html_boiler_plate.replace(CONTENT_TAG, '\n'.join(gen_shaders(html_item))))
+    open(f"index_previews.html", "w", encoding='utf-8').write(html_boiler_plate.replace(CONTENT_TAG, '\n'.join(gen_index_preview(html_pages, html_repos))))
 
 
 

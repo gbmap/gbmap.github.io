@@ -1,189 +1,171 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <link href="https://iosevka-webfonts.github.io/iosevka-term/iosevka-term.css" rel="stylesheet" />
     </head>
     <body class="cv">
-        <div class="cv_section">
-            <div class="cv_title">
-                <h1 id="cv_name">Gabriel M. A. P.</h1>
-                <h4 id="cv_email">gabehilism@gmail.com</h4>
-                <h4 id="cv_portfolio">https://gbmap.github.io</h4>
-                <h4 id="cv_">https://github.com/gbmap</h4>
+        <div class="cv_header" style="display: flex; flex-direction: row;">
+
+            <div class="cv_section" style="flex-grow: 1; width: 30%;">
+                <div class="cv_info" style="display: flex; flex-direction: row; flex-flow: column;">
+                    <h1 id="cv_name">Gabriel M. A. P.</h1>
+                    <h2 id="cv_name">Software Engineer</h3>
+                    <h4 id="cv_email">jobs@gabrielmap.io</h4>
+                    <div class="separator-hor"></div>
+                    <a href="http://gabrielmap.io"><h4 id="cv_link">gabrielmap.io</h4></a>
+                    <a href="https://linkedin.com/in/gabrielmap"><h4 id="cv_link">linkedin.com/in/gabrielmap</h4></a>
+                    <a href="https://app.hackthebox.com/profile/613706"><h4 id="cv_link">app.hackthebox.com/profile/613706</h4></a>
+                    <a href="https://leetcode.com/gbmap/"><h4 id="cv_link">leetcode.com/gbmap/</h4></a>
+                    <div class="separator-vert"></div>
+
+                </div>
             </div>
-            <div class="cv_description">
-                <div class="emprego" style="margin-top: 20px;">
+            
+            <div class="separator-vert"></div>
+
+            <div class="cv_section" style="flex-grow: 1; width: 70%;">
+                <h1 class="cv_title">About</h1>
+                <div class="cv_description">
+                <div class="emprego">
+                    Software engineer since 2013, currently working with ML for climate prediction. I have experience in the
+                    gaming industry and have helped ship games to Windows, Linux, macOS, iOS, Android, Xbox One and the Playstation 4. I am interested
+                    in ML, GameDev and DevOps.
+                    <br><br>
+                    Skills:
+                    <div class="techs">
+                        <div><p>Python</p></div>
+                        <div><p>PyTorch</p></div>
+                        <div><p>Machine Learning</p></div>
+                        <div><p>CI/CD</p></div>
+                        <div><p>Docker</p></div>
+                        <div><p>SQL</p></div>
+                        <div><p>Bash</p></div>
+                        <div><p>Dask</p></div>
+                        <div><p>C#</p></div>
+                        <div><p>C++</p></div>
+                        <div><p>Unity</p></div>
+                        <div><p>Github</p></div>
+                        <div><p>GLSL</p></div>
+                        <div><p>HLSL</p></div>
+                        <div><p>Android</p></div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
 
+        <div class="separator-hor"></div>
         <div class="cv_section">
-            <h2 class="cv_title">About ></h2>
+            <h1 class="cv_title">Work Experience</h2>
             <div class="cv_description">
-            <div class="emprego">
-                I'm a software developer with 10 years of experience, currently working with ML for weather prediction. I have experience in the
-                gaming industry and have helped ship games to Windows, Linux, macOS, iOS, Android, Xbox One and the Playstation 4, with upwards of 
-                millions of players.
-                <br><br>
-                Technologies:
-                <div class="techs">
-                    <div><p>Python</p></div>
-                    <div><p>PyTorch</p></div>
-                    <div><p>C#</p></div>
-                    <div><p>C++</p></div>
-                    <div><p>Unity</p></div>
-                    <div><p>MySQL</p></div>
-                    <div><p>Github</p></div>
-                    <div><p>GLSL</p></div>
-                    <div><p>HLSL</p></div>
-                </div>
-            </div>
-            </div>
-        </div>
 
-        <div class="cv_section">
-            <h2 class="cv_title">Work Experience ></h2>
-            <div class="cv_description">
             <div class="emprego">
-                <h3><b>Python Developer</b> <br> AtmosMarine (06/2023 - Now) </h3>
-                <div class="techs">
-                    <div><p>Python</p></div>
-                    <div><p>Machine Learning</p></div>
-                    <div><p>XGBoost</p></div>
-                    <div><p>Dask</p></div>
-                    <div><p>Snowflake</p></div>
-                    <div><p>netCDF</p></div>
-                    <div><p>xarray</p></div>
-                    <div><p>CI/CD</p></div>
-                    <div><p>PostgreSQL</p></div>
-                    <div><p>Matplotlib</p></div>
-                    <div><p>numpy</p></div>
-                    <div><p>Apache Airflow</p></div>
+                <div class="emprego-title">
+                    <h2>Python Developer / ML Engineer</h2>
+                    <h2 class="emprego-place">@ AtmosMarine (06/2023 - Now)</h2>
                 </div>
-                <li>Implemented daily training for the company's Hybrid Weather Forecast system;</li>
+                <li>Wrote and deployed daily 10-day wind speed forecast for 74 spots in Brazil;</li>
+                <li>Implemented daily training for the company's Hybrid Weather Forecast ML system;</li>
                 <li>Optimized data pipeline tasks with parallelization using Dask;</li>
-                <li>Implemented a gridded data interpolation library to generate training data for specific geolocations, daily;</li>
+                <li>Assisted other developers and meteorologists with optimization/problem-solving in Python;</li>
+                <li>Modelled an ORM database using SQLAlchemy and PostgreSQL with the development team.</li>
+                <li>Assisted junior developers with the migration from Snowflake to the ORM PostgreSQL database.</li>
+                <li>Designed a Python framework to leverage common functionality in training, evaluating and deploying weather prediction ML models.</li>
+                <li>Created a dashboard for weather data visualization using Dash.</li>
             </div>
+
             <div class="emprego">
-                <h3><b>Python Developer / Research Assistant</b> <br> Freelance (03/2023 - Now) </h3>
-                <div class="techs">
-                    <div><p>Python</p></div>
-                    <div><p>Pandas</p></div>
-                    <div><p>Matplotlib</p></div>
-                    <div><p>Seaborn</p></div>
-                    <div><p>netCDF</p></div>
-                    <div><p>xarray</p></div>
-                    <div><p>Slurm Workload Manager</p></div>
+                <div class="emprego-title">
+                    <h2>Python Developer / Research Assistant</h2>
+                    <h2 class="emprego-place">@ Freelance (03/2023 - Now)</h2>
                 </div>
-                <li>Implemented the pipeline to download decades of NWP models (ERA5, ECMWF) on more than 100 locations;</li>
-                <li>Parallelized most of the computing necessary with Slurm;</li>
-                <li>Implemented all graphs and analysis-specific code for two PhD papers.</li>
+                <li>Implemented the pipeline to download decades of numerical weather prediction models (ERA5, ECMWF) on more than 100 locations using Python, Dask, Pandas, Xarray, PyArrow and Bash;</li>
+                <li>Used SLURM to parallelize computing;</li>
+                <li>Did climate data analysis and visualization for two PhD papers using Pandas, PyArrow, Xarray, Matplotlib and Seaborn.</li>
             </div>
+
             <div class="emprego">
-                <h3><b>Unity Gameplay Developer</b> <br> Nave Estelar (09/2021 - 08/2022)</h3>
-                <div class="techs">
-                    <div><p>C#</p></div>
-                    <div><p>Unity3D</p></div>
-                    <div><p>GLSL</p></div>
-                    <div><p>HLSL</p></div>
-                    <div><p>TDD</p></div>
-                    <div><p>CI/CD</p></div>
+                <div class="emprego-title">
+                    <h2>Unity Developer</h2>
+                    <h2 class="emprego-place">@ Nave Estelar (09/2021 - 08/2022)</h2>
                 </div>
                 <li>Designed the architecture for Powerups, Enemies and UI, using ScriptableObjects as core data containers;</li>
                 <li>Refactored and optimized an existing level generation framework to support more flexible configurations and different styles of levels; </li>
                 <li>Implemented AI for all the enemies in the game using FSMs;</li>
                 <li>Automated audio integration into Unity and FMOD from spreadsheets created by the sound designer;</li>
-                <li>Hired and assisted a junior developer in the project;</li>
-                <li>Formalized code development with code reviews, pull requests and branch-per-feature strategy for better integration;</li>
+                <li>Hired and assisted junior developers in the project;</li>
+                <li>Formalized code development with code reviews, pull requests and branch-per-feature strategy;</li>
                 <li>Introduced automated testing in development using Unity's Test Runner;</li>
-                <li>Implemented game effects and optimized HLSL shaders and Shader Graphs.</li>
+                <li>Implemented game effects and optimized HLSL shaders/Shader graphs.</li>
             </div>
+
             <div class="emprego">
-                <h3><b>Unity Developer</b> <br> Freelance (05/2018 - 09/2021)</h3>
-                <div class="techs">
-                    <div><p>C#</p></div>
-                    <div><p>Unity3D</p></div>
-                    <div><p>GLSL</p></div>
-                    <div><p>HLSL</p></div>
-                    <div><p>MySQL</p></div>
+                <div class="emprego-title">
+                    <h2>Unity Developer</h2>
+                    <h2 class="emprego-place">@ Freelance (05/2018 - 09/2021)</h2>
                 </div>
-                <li>Developed a local coop roguelite/beat-em-up game in Unity.</li>
-                <li>Wrote an end-to-end dungeon generator from bitmap to final mesh, prop placement and enemies.</li>
-                <li>Implemented a simple custom rendering pipeline in Unity.</li>
-                <li>Designed a "connectionless" weight-based State Machine for enemies.</li>
-                <li>Implemented editors for entity creation such as characters, items and equipment.</li>
+                <li>Developed a 3D local co-op roguelite/beat-em-up game in Unity;</li>
+                <li>Wrote an end-to-end dungeon generator from bitmap to final mesh, prop placement and enemies;</li>
+                <li>Wrote a custom rendering pipeline;</li>
+                <li>Implemented editors for entity creation and management such as characters, items and equipment with ScriptableObjects.</li>
             </div>
+
             <div class="emprego">
-                <h3><b>Unity Client/Port Developer</b> <br> Behold Studios (09/2016 - 07/2017)</h3>
-                <div class="techs">
-                    <div><p>C#</p></div>
-                    <div><p>C++</p></div>
-                    <div><p>SCRUM</p></div>
-                    <div><p>Unity3D</p></div>
-                    <div><p>Console Development</p></div>
+                <div class="emprego-title">
+                    <h2>Unity Developer</h2>
+                    <h2 class="emprego-place">@ Behold Studios (09/2016 - 07/2017)</h2>
                 </div>
                 <li>Ported a turn-based strategy game developed in Unity from PC to Xbox One and PS4;</li>
                 <li>Optimized memory management for consoles and reduced memory allocation hiccups during gameplay;</li>
-                <li>Implemented quality of life features for consoles in the game (joystick support, profiles, etc);</li>
+                <li>Shipped quality of life features for consoles in the game (joystick support, profiles, etc);</li>
                 <li>Implemented cloud save features;</li>
                 <li>Worked with a QA company and fixed bugs reported by them;</li>
-                <li>Implemented New Game+/New Game++ into the game.</li>
+                <li>Added New Game+/New Game++ features to the game.</li>
             </div>
             <div class="emprego">
-                <h3><b>Unity Gameplay Developer</b> <br> Aquiris Game Studio (10/2015 - 09/2016)</h3>
-                <div class="techs">
-                    <div><p>C#</p></div>
-                    <div><p>Unity3D</p></div>
-                    <div><p>Python</p></div>
-                    <div><p>Maya</p></div>
-                    <div><p>AGILE</p></div>
-                    <div><p>Jenkins</p></div>
+                <div class="emprego-title">
+                    <h2>Unity Developer</h2>
+                    <h2 class="emprego-place">@ Aquiris Game Studio (10/2015 - 09/2016)</h2>
                 </div>
                 <li>Implemented gameplay features and fixed bugs for an online First-Person Shooter published to Steam;</li>
                 <li>UI implementation with MVC and MVVM frameworks for gameplay, store, player stats, server creation, etc;</li>
                 <li>Wrote a Python plug-in that exported custom animation data in .fbx files from Maya and loaded them automatically into Unity; </li>
-                <li>Developed combat prototypes together with game designers at the pre-production stage of a turn-based classic RPG.</li>
+                <li>Developed combat prototypes together with game designers at the pre-production stage of a turn-based classic RPG;</li>
                 <li>Assisted in designing a custom animation framework for highly customizable characters.</li>
-
             </div>
             <div class="emprego">
-                <h3><b>C# .NET/ASP.NET/WPF Developer</b> <br> Compuletra (07/2013 - 03/2015)</h3>
-                <div class="techs">
-                    <div><p>C++</p></div>
-                    <div><p>C#</p></div>
-                    <div><p>Java</p></div>
-                    <div><p>OpenCV</p></div>
-                    <div><p>Android</p></div>
-                    <div><p>.NET</p></div>
-                    <div><p>ASP.NET</p></div>
-                    <div><p>ASP.NET MVC</p></div>
-                    <div><p>WPF</p></div>
-                    <div><p>HTML</p></div>
-                    <div><p>CSS</p></div>
-                    <div><p>JavaScript</p></div>
-                    <div><p>MSSQL</p></div>
+                <div class="emprego-title">
+                    <h2>.NET Developer</h2>
+                    <h2 class="emprego-place">@ Compuletra (07/2013 - 03/2015)</h2>
                 </div>
-                <li>R&D of a realtime ANPR library using Haar Cascade Feature Identification with OpenCV and C++;</li>
-                <li>Ported the ANPR C++ library to Android devices and Raspberry Pis;</li>
-                <li>Developed an Android application that recognized car plates in realtime then verified the car status with different remote databases;</li>
-                <li>Developed a car plate bounding-box collection tool in C++, OpenCV and MSSQL used for improving the ANPR library;</li>
-                <li>Developed a WPF panel for monitoring connection and traffic data in more than 10 posts scattered throughout the country;</li>
-                <li>Developed a realtime godview panel for devices using an Android app in ASP.NET MVC and Microsoft SQL Server;</li>
+                <li>Assisted in the development of a real-time ANPR library using Haar Cascade Feature Identification with OpenCV and C++;</li>
+                <li>Ported an ANPR C++/OpenCV library to Android devices and Raspberry Pis;</li>
+                <li>Wrote a data annotation tool in C++/OpenCV/MSSQL used by the company to train de ANPR algorithm;</li>
+                <li>Developed a WPF panel for traffic monitoring in more than 10 locations throughout Brazil;</li>
+                <li>Built a realtime godview panel for devices using an Android app in C#, ASP.NET MVC and MSSQL;</li>
                 <li>Fixed bugs for several existing ASP.NET portals used by clients.</li>
             </div>
             </div>
         </div>
 
+        <div class="separator-hor"></div>
+
         <div class="cv_section">
-            <h2 class="cv_title">Education ></h2>
+            <h1 class="cv_title">Education</h2>
             <div class="cv_description">
             <div class="emprego">
-                <h3><b>Bachelor of Computer Science</b> <br> University of The People (12/2024 - ??/2028)</h3>
+                <div class="emprego-title">
+                    <h2>Bachelor of Computer Science</h2>
+                    <h2 class="emprego-place">@ University of The People (12/2024 - 12/2028)</h2>
+                </div>
             </div>
             </div>
         </div>
 
+        <div class="separator-hor"></div>
+
         <div class="cv_section">
-            <h2 class="cv_title">Courses and Certifications ></h2>
+            <h1 class="cv_title">Courses and Certifications</h2>
             <div class="cv_description">
                 <div class="techs">
                     <div><p>Generative Deep Learning with TensorFlow | Coursera</p></div>
@@ -196,24 +178,5 @@
                 </div>
             </div>
         </div>
-
-        <!-- <div class="cv_section">
-            <h2 class="cv_title">Skills</h2>
-            <div class="cv_description">
-            <div class="skills">
-                <p>C#</p>
-                <p>Unity3d</p>
-                <p>Python</p>
-                <p>GLSL</p>
-                <p>Blender</p>
-                <p>Photoshop</p>
-                <p>After Effects</p>
-                <p>C++</p>
-                <p>SQL</p>
-                <p>Java</p>
-                <p>Android</p>
-            </div>
-            </div>
-        </div> -->
     </body>
 </html>
